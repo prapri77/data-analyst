@@ -1,0 +1,21 @@
+Enable developer tab
+
+File -> More -> Option -> custimize ribbon -> Tick the develop tab
+
+VBA -> Visual basic application
+Macro
+
+Record macro
+
+Step 1
+
+Alt + F11 => To open the VBE (Visual basic editor)
+
+Alt + F8 => to run the macro
+
+Start + left => arrange window
+
+
+Alt L R  => Start / Stop record macro
+
+

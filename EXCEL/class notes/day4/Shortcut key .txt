@@ -1,0 +1,123 @@
+Enter => for go to next row (next cell)
+TAB => goto right side (next cell)
+
+shift Enter => goto up row
+Shift TAB => goto left side (Previous cell)
+
+Alt H O R => for rename sheet
+Alt H O M => Move or copy the sheet
+
+At H B A => For Border
+
+
+Shift + (fn) F11 =>Insert a new sheet
+Ctrl + (Fn) F1 => To hide / Show the Ribbon
+
+Shift + Enter => Same like up arrow 
+Curser will move 1 cell above
+
+Enter => Cursor will move next Row
+
+Tab => Goto to next column Same row
+Shift + Tab => Goto to previous column same row
+
+Ctrl + F3 => Name manager
+Alt M N
+
+In power bi => To enable map control 
+File -> Option and settings -> Options -> Global -> Security -> Tick (Use Map and filled map visuals
+
+
+Window + R => To open Run window
+
+excel
+notepad
+winwork
+
+
+Window + D => Desktop
+Window + E => My computer (Explorer)
+
+Window + L => Lock the computer
+
+
+To Open new excel
+Click start -> search excel -> open
+Select Blank workbook
+
+
+Step 1 : Window + R (To open Run)
+Step 2 : type "Excel"
+Step 3 : Enter (or) Click on OK
+Step 4 : Select Blank workbook
+
+
+
+Ctrl N => To Open new excel
+Ctrl W => To close the current excel
+
+Click on A1 
+Alt W F F for freese the heading
+Ctrl + B => For Bold
+
+
+Ctrl + D => Copy down
+Ctrl + R => Copy Right
+
+For Column auto fit
+Alt O C A
+or
+Alt H O I
+------------------------
+
+For Column auto fit
+Alt O R A
+or
+Alt H O A
+-----------------------
+
+Topics
+
+Alt H FI S => To Fill the sequence numbers
+
+i) Countif
+ii) Countifs
+
+iii) sum
+iv) Sumif
+v) Sumifs
+------------------------------------------
+To fill data
+Step 1: Goto A Column (Data col)
+Step 2: Ctrl + Down arrow (Move to next end)
+Step 3: Only Right
+Step 4: Ctrl + Shift + Up arrow
+Step 5: Ctrl + D
+
+**********
+Cell lock
+**********
+ (i) Relative Reference
+ (ii) Absolute Reference
+ (iii) Mixed Reference
+	(a) Row Absolute Col Relative
+	(b) Col Absolute Row Relative
+------------------------------------------
+
+Ctrl + Shift + L (To Filter)
+Alt + Down arrow
+Alf F G => show only Greater then value (ex: 34)
+Ctrl + Space bar => To Entier column
+Shift + Space bar => To Entier Row
+
+Ctrl Shift "+" => for insert
+Ctrl "-" => for delete
+
+Alt + Equal => Auto Sum (Sum of above number)
+
+
+Click on table (Data)
+Alt N V => for insert pivot table
+
+
+To Refresh pivot shortcut key is Alt A R A
