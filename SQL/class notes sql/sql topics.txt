@@ -1,0 +1,42 @@
+--basic sql statement
+--relational operators
+--single row function
+--external table
+--sorting data
+--sqlloader
+--group function
+--analytical function
+--set operators
+--joins
+--pseudo column
+--constraint
+--ddl
+--dcl
+--tcl
+--dml
+--views
+--subquery
+--sequence 
+--synonyms
+--index
+
+
+http://127.0.0.1:8080/apex/f?p=4550:11:1136286442136050::NO:::
+
+
+
+select from where having on--clauses
+
+*---all columns
+ 
+select * from EMPLOYEES;
+ 
+select columnname1,columnname2 / * from tablename
+ 
+SeLect table_name from user_tables;
+ 
+desc employees;
+
+https://drive.google.com/file/d/1-L2yFuwwAPhc5pyBtk_kjPi8GagOijpD/view?usp=drivesdk
+
+ 

@@ -1,0 +1,20 @@
+relational operators:
+>all--select first_name,salary from employees where salary >all (7000,17000);GREATER than greatest
+<all--select first_name,salary from employees where salary <all (7000,17000);lesser than least
+>any--select first_name,salary from employees where salary >any (7000,17000);greater than least
+>any--select first_name,salary from employees where salary <any (7000,17000);lesser than greatest
+like-select first_name,salary from employees where  first_name like 'Lex'
+notlike-select first_name,salary from employees where  first_name not like 'Lex'
+in-select first_name,salary from employees where  salary in (4800,24000,17000);
+notin-select first_name,salary from employees where  salary not in (4800,24000,17000);
+and-select first_name,salary from employees where first_name='David' and salary>5000
+or-select first_name,salary from employees where first_name='David' or salary>5000)
+>-select first_name,salary from employees where  salary>5000
+<-select first_name,salary from employees where  salary<5000
+<> not equal to-select first_name,salary from employees where  salary<>5000
+greater than>=-select first_name,salary from employees where  salary>=5000
+lesser than<=-select first_name,salary from employees where  salary<=5000
+is null-select first_name,salary from employees where  department_id is null
+is not null-select first_name,salary from employees where  department_id is not null
+between-select first_name,salary from employees where  salary between 5000 and 10000;
+not between-select first_name,salary from employees where  salary not between 5000 and 10000;
