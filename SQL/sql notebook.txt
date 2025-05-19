@@ -1,0 +1,65 @@
+https://www.python.org/downloads/
+
+mkdir sql_notebook
+cd sql_notebook
+
+python -m venv env
+
+env\Scripts\activate
+
+pip install --upgrade pip
+
+pip install notebook
+
+pip install ipython-sql
+
+pip install prettytable==0.7.2
+
+pip install mysql-connector-python
+
+jupyter notebook
+
+%load_ext sql
+%sql mysql+mysqlconnector://root:root@localhost/test
+
+%%sql
+show databases;
+
+https://github.com/sbgowtham/SQL_DataEngineering_MasterClass
+
+𝗖𝗼𝘂𝗿𝘀𝗲 𝗢𝘂𝘁𝗹𝗶𝗻𝗲
+00:00:00 Introduction
+00:17:43 MySQL Installation Windows 
+00:23:57 MySQL Installation Linux 
+00:26:29 MySQL Notebooks
+00:34:00 DDL DML TCL DCL
+00:36:42 SQL Basic Commands CRUD Create, Read, Update, and Delete
+00:53:56 Different Type of Create Table 
+01:00:48 Alter Column and Alter Table 
+01:03:43 Where 
+01:12:22 SQL Constriants 
+01:56:55 Minimal Key
+02:01:31 Natural Key , Surrogate Key 
+02:04:40 Super Key , Candidate Key 
+02:11:15 Aggregation , NOT IN , AND , OR , IN , ALAIS 
+02:32:00 Case When 
+02:41:18 NULL Handling 
+02:52:20 String Handling
+03:06:14 Sub Queries 
+03:19:34 View 
+03:23:50 Joins 
+03:48:20 Window Function and Its Types 
+04:45:34 Union and Union ALL
+04:57:29 Index and Explain ANALYZE
+05:10:35 Partition 
+05:45:37 Data and Time 
+05:52:56 Regex 
+06:01:38 Commit and Rollback
+06:05:04 Grant and Revoke 
+06:10:37 Python JDBC Connectivity 
+06:15:20 Normalization and its types
+06:32:54 SCD Slowly Changing Dimension
+06:46:53 ACID 
+06:55:52 4 Data Engineering Projects 
+08:29:30 The END  
+
