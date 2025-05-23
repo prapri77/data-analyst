@@ -1,0 +1,74 @@
+ddl-data definition language
+
+
+create
+alter
+(add
+rename
+modify
+drop)
+truncate
+drop
+
+
+datatypes
+----------
+number(38)
+char(2000)
+varchar2(4000)
+long(2gb)
+clob(4gb)
+blob(4gb)
+date (to store date)
+timestamp (date+time)
+bfile    (filepath)
+xmltype(to store xml data)
+-------------------------------------------------------------------------------------------------
+
+create
+-----------
+
+create table students
+(sid number,
+sname varchar2(30),
+cid   number,
+gender char(1)
+dob     date);
+
+  
+INSERT all
+  INTO students (sid,sname,cid,gender,dob) VALUES (001,'saran',101,'m','04-sep-1999')  
+  INTO students (sid,sname,cid,gender,dob) VALUES (002,'sarath',102,'m','04-sep-2000')
+  INTO students (sid,sname,cid,gender,dob) VALUES (003,'deepak',103,'m','04-sep-1998') 
+  INTO students (sid,sname,cid,gender,dob) VALUES (004,'rakesh',104,'m','04-sep-1997') 
+  INTO students (sid,sname,cid,gender,dob) VALUES (005,'rahul',105,'m','04-sep-1996')  
+select * from dual; 
+------------------------------------------------------------------------------------------------------
+alter
+----------
+add
+---
+
+alter table students add faculty_name varchar2(30);
+
+modify
+------
+
+alter table students modify faculty_name varchar2(40);
+
+rename
+-------
+
+alter table students rename column faculty_name to teacher_name;
+
+drop
+----
+alter table students drop column teacher_name;
+
+truncate: delete all data only inside the table
+
+truncate table students;
+
+drop: delete full structure of the table from database
+
+drop table students;

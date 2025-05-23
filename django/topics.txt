@@ -1,0 +1,22 @@
+OOPS -- class, constructor, instance, instance method, Inheritence, inner class outer class, Object, classmethod
+functions -- parameters, arguments, *args, **kwargs, default parameters, return, namespaces,
+decorators,
+modules (libraries)
+
+
+Backend:
+
+=> authenticate, validate the user
+=> payload receive and validations and process
+=> create after validations, retrive necessary, clean according to the requirement, delete the data, update the data
+=> asynchronous -- when we receive massive amount of request at same time processing and queing
+=> mail, otp sending process
+=> wsgi, asgi
+=> websocktes
+=> database connections
+=> image or binary storage handling
+=> load balancing
+=> .env keep the sensitive
+=> data maintaining -compressing, back up the data
+=> data science, data visualization apis
+=> bot integration with auto answering machine learning

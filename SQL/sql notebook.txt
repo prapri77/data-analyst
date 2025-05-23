@@ -25,7 +25,17 @@ jupyter notebook
 %%sql
 show databases;
 
+https://www.youtube.com/watch?v=JtaOmwnR6AM
+
 https://github.com/sbgowtham/SQL_DataEngineering_MasterClass
+
+https://github.com/sbgowtham/spotify_data_analytics
+
+https://github.com/sbgowtham/instagram-data-analysis
+
+https://github.com/sbgowtham/zomato_data_engineering
+
+https://developer.spotify.com/dashboard
 
 𝗖𝗼𝘂𝗿𝘀𝗲 𝗢𝘂𝘁𝗹𝗶𝗻𝗲
 00:00:00 Introduction
@@ -62,4 +72,9 @@ https://github.com/sbgowtham/SQL_DataEngineering_MasterClass
 06:46:53 ACID 
 06:55:52 4 Data Engineering Projects 
 08:29:30 The END  
+
+
+MY PYTHON AND MYSQL CONNECTOR PATH IS 
+
+C:\Users\Prashant\AppData\Local\Programs\Python\Python313\Lib\site-packages
 
