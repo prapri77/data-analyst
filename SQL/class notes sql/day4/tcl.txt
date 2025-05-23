@@ -1,0 +1,20 @@
+tcl transaction control unit
+
+
+commit - to save all pending changes to permenant
+rollback-to discard all pending record
+savepoint-its a marker
+
+
+t1
+1
+2
+commit;
+3
+4
+savepointx;
+5
+6
+rollback to x;
+
+ 

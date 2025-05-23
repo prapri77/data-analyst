@@ -1,9 +1,0 @@
-create table employee and change table name to staff:
-
-create table employee (emp_id number, name varchar(20),hire_date date);
-
-desc employee;
-
-alter table employee rename to staff;
-
-desc staff;

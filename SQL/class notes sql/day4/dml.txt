@@ -1,0 +1,38 @@
+dml-data manuplation languages
+
+insert
+update
+delete
+
+
+insert-insert data into table
+-----------------------------
+
+INSERT INTO students (sid,sname,cid,gender,dob) VALUES (001,'saran',101,'m','04-sep-1999');
+
+----------------------------------------------------------------------------------------------
+insert all: insert multiple rows of data into the table  
+----------------------------------------------------------
+
+INSERT all
+  INTO students (sid,sname,cid,gender,dob) VALUES (001,'saran',101,'m','04-sep-1999')  
+  INTO students (sid,sname,cid,gender,dob) VALUES (002,'sarath',102,'m','04-sep-2000')
+  INTO students (sid,sname,cid,gender,dob) VALUES (003,'deepak',103,'m','04-sep-1998') 
+  INTO students (sid,sname,cid,gender,dob) VALUES (004,'rakesh',104,'m','04-sep-1997') 
+  INTO students (sid,sname,cid,gender,dob) VALUES (005,'rahul',105,'m','04-sep-1996')  
+select * from dual; 
+
+----------------------------------------------------------------------------------------------------
+update update field in the table or database
+
+update students set sid=6
+where sid=5
+
+update table set column name=value 
+where column name = value
+----------------------------------------------------------------------------------------------------
+delete: delete particular row from table
+
+delete from students where sid=6;
+----------------------------------------------------------------------------------------------------
+
