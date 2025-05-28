@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to TravelEase</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #0288d1;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .user-info {
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h1 {
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .option-card {
+            background-color: #f1f1f1;
+            width: 250px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .option-card:hover {
+            transform: scale(1.05);
+            background-color: #e0f7fa;
+        }
+
+        .option-card img {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .option-card h3 {
+            margin: 10px 0;
+            color: #007bb5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .options {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">TravelEase</div>
+        <div class="user-info">
+            Welcome, {{ full_name }}<br>
+            Email: {{ email }}
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Book Your Journey</h1>
+        <p>Select a mode of transport to continue:</p>
+        <div class="options">
+            <a href="#" style="text-decoration: none;">
+                <div class="option-card">
+                    <img src="https://img.icons8.com/external-icongeek26-outline-icongeek26/100/000000/external-bus-transportation-icongeek26-outline-icongeek26.png"
+                        alt="Bus">
+                    <h3>Bus Booking</h3>
+                </div>
+            </a>
+            <a href='#'' style="text-decoration: none;">
+                <div class="option-card">
+                    <img src="https://img.icons8.com/ios/100/000000/airplane-take-off--v1.png" alt="Flight">
+                    <h3>Flight Booking</h3>
+                </div>
+            </a>
+            <a href=' #'' style="text-decoration: none;">
+                <div class="option-card">
+                    <img src="https://img.icons8.com/ios/100/000000/train.png" alt="Train">
+                    <h3>Train Booking</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 TravelEase. All rights reserved.
+    </div>
+
+</body>
+
+</html>

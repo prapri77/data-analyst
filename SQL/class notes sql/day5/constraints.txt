@@ -1,0 +1,56 @@
+constraints-Constraints are used to limit the type of data that can go into a table
+
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Prevents actions that would destroy links between tables
+CHECK - Ensures that the values in a column satisfies a specific condition
+DEFAULT - Sets a default value for a column if no value is specified
+========================================
+
+create table emp
+(
+emp_id number(10),
+constraint cons_empid_pk primary key(emp_id),
+name varchar2(20) not null,
+institute varchar2(10) default 'besant',
+email  varchar2(30) unique,
+gender varchar2(10),
+check(gender in ('m','f'))
+);
+
+
+insert into emp(emp_id,name,email,gender) values(1,'saran',null,'m')
+insert into emp(emp_id,name,email,gender) values(2,'rahul',null,'m')
+=====================================================================================
+
+foreign key
+
+create table department
+(
+dept_id number,
+CONSTRAINT department_pk PRIMARY KEY (dept_id),
+dept_name varchar2(30) not null);
+
+insert into department(dept_id,dept_name) values (10,'aws')
+
+create table emp
+(
+emp_id number(10) NOT NULL,
+constraint cons_empid_pk primary key(emp_id),
+name varchar2(20) not null,
+institute varchar2(10) default 'besant',
+email  varchar2(30) unique,
+gender varchar2(10),
+check(gender in ('m','f')),
+dept_id number,
+ CONSTRAINT fk_dept
+    FOREIGN KEY (dept_id)
+    REFERENCES department(dept_id)
+);
+
+insert into emp(emp_id,name,email,gender,dept_id) values(1,'saran',null,'m',10);
+
+select e.*,d.* from emp e,department d where e.dept_id=d.dept_id;
+
+desc emp

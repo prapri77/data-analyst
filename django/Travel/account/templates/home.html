@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelEase - Explore the World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            background: #1e90ff;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('https://source.unsplash.com/1600x600/?travel') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: aqua;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: hotpink;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .search-form input {
+            padding: 0.75rem;
+            flex: 1;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-form button {
+            padding: 0.75rem 1.5rem;
+            background-color: #ff7f50;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-form button:hover {
+            background-color: #ff5722;
+        }
+
+        .features {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            margin: 0 1rem 1.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">TravelEase</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Signup</a></li>
+
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Explore the World with TravelEase</h1>
+            <p>Find the best destinations and plan your dream vacation today.</p>
+            <form class="search-form">
+                <input type="text" placeholder="Search destination..." />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2>Top Destinations</h2>
+        <div class="destinations">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?paris" alt="Paris" />
+                <h3>Paris</h3>
+                <p>The city of lights, romance, and amazing food.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?bali" alt="Bali" />
+                <h3>Bali</h3>
+                <p>Sun, beaches, temples, and tranquil vibes await you.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?newyork" alt="New York" />
+                <h3>New York</h3>
+                <p>The bustling heart of America, filled with life and excitement.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 TravelEase. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
