@@ -1,0 +1,30 @@
+sequence: user defined schema bound object that generates a sequence numeric values
+ according to the specification with which the sequence was created
+
+create sequence seq
+start with 1
+increment by 1
+maxvalue 10;
+
+alter sequence seq
+increment by 2
+maxvalue 30;
+
+
+select seq.nextval from dual;
+select seq.currval from dual;
+----------------------------------------------------------------------------
+synonyms:alternate name fro an object (it will generate duplicate name)
+synonyms can create for synonyms
+
+create synonym syn for employees; 
+
+select * from syn;
+
+create synonym syn1 for syn; 
+
+select * from syn1;
+
+
+select * from user_synonyms;
+----------------------------------------------------------------------------------------

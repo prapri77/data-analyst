@@ -1,0 +1,51 @@
+joins
+ create table emp as select*from employees where rownum<=5
+joins are used to join two or more tables on the table itself
+
+equi join/inner join
+self join
+outerjoin
+     left outer join
+     right outer join
+     full outer join
+
+1)inner join
+
+*it is also cross join but a cross join with equi condition
+
+select e.employee_id,first_name,d.department_id,department_name from employees e,departments d where e.department_id=d.department_id
+
+select e.employee_id,first_name,d.department_id,d.department_name from employees e,departments d
+where e.department_id=d.department_id
+
+select e.employee_id,first_name,d.department_id,department_name from employees e inner join departments d 
+on e.department_id=d.department_id where d.department_id in (10,20,30)
+
+select e.employee_id,first_name,d.department_id,department_name,l.location_id from employees e,departments d,locations l where e.department_id=d.department_id 
+and d.location_id=l.location_id
+--------------------------------------------------------------------------------------------------------------------------
+2) self join
+ self join is a join which join the table itself
+ different alias name are taken for same table
+
+
+select e1.employee_id,e1.first_name,e2.employee_id,e2.first_name from employees e1,employees e2
+where e1.manager_id=e2.employee_id and e1.salary > e2.salary 
+------------------------------------------------------------------------------------------------
+3)left outer join
+
+it will give all the values from left side and matched values from right side
+
+select e.employee_id,first_name,d.department_id,d.department_name from employees e left outer join departments d 
+on e.department_id=d.department_id
+
+right outer join
+it will give all the values from right side and matched values from left side
+
+select e.employee_id,first_name,d.department_id,d.department_name from employees e right outer join departments d 
+on e.department_id=d.department_id
+
+full outer join
+select e.employee_id,first_name,d.department_id,d.department_name from employees e full outer join departments d 
+on e.department_id=d.department_id
+

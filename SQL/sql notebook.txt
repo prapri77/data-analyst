@@ -78,3 +78,7 @@ MY PYTHON AND MYSQL CONNECTOR PATH IS
 
 C:\Users\Prashant\AppData\Local\Programs\Python\Python313\Lib\site-packages
 
+
+
+ 
+
