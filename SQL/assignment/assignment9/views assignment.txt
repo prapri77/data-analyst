@@ -1,0 +1,61 @@
+create or replace view empv1 as
+select * from employees where salary between 10000 and 20000;
+
+select * from empv1
+
+CREATE or replace VIEW  dept10_employees AS
+SELECT employee_id, salary,department_id
+FROM employees
+WHERE department_id = 100;
+
+
+select * from dept10_employees 
+
+SELECT view_name FROM user_views;
+
+select * from user_views
+
+SELECT owner, view_name FROM all_views;
+
+select * from all_views
+
+SELECT owner, view_name FROM dba_views;
+
+select * from dba_views;
+
+SELECT view_name, text
+FROM user_views;
+
+SELECT dbms_metadata.get_ddl('VIEW', 'DEPT10_EMPLOYEES') FROM dual;
+
+select column_name, data_type, data_length, table_name
+from user_tab_columns
+where table_name = 'EMPV1';
+
+select * from user_tab_columns;
+
+select owner, column_name, data_type
+from all_tab_columns
+where table_name = 'DEPT10_EMPLOYEES';
+
+select * from all_tab_columns
+
+select owner, column_name, data_type
+from dba_tab_columns
+where table_name = 'DEPT10_EMPLOYEES';
+
+
+select view_name,
+       DBMS_METADATA.GET_DDL('VIEW', view_name) AS view_ddl
+from user_views
+where DBMS_METADATA.GET_DDL('VIEW', view_name) LIKE '%EMPLOYEE_ID%';
+
+select view_name,
+       DBMS_METADATA.GET_DDL('VIEW', view_name) AS view_ddl
+from user_views
+where DBMS_METADATA.GET_DDL('VIEW', view_name) LIKE '%EMAIL%';
+
+SELECT view_name,text
+FROM user_views
+
+employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,commission_pct,manager_id,department_id,address,city,state,postal_code,country,birth_date,gender,marital_status,is_active,created_at,updated_at

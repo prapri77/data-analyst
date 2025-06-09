@@ -1,0 +1,61 @@
+create or replace directory emp_dtails as 'V:\'
+
+CREATE TABLE employees_ext (
+    employee_id       NUMBER(6),
+    first_name        VARCHAR2(20),
+    last_name         VARCHAR2(25),
+    email             VARCHAR2(50),
+    phone_number      VARCHAR2(15),
+    hire_date         DATE,
+    job_id            VARCHAR2(10),
+    salary            NUMBER(8, 2),
+    commission_pct    NUMBER(4, 2),
+    manager_id        NUMBER(6),
+    department_id     NUMBER(4),
+    address           VARCHAR2(100),
+    city              VARCHAR2(30),
+    state             VARCHAR2(20),
+    postal_code       VARCHAR2(10),
+    country           VARCHAR2(30),
+    birth_date        DATE,
+    gender            CHAR(1),
+    marital_status    VARCHAR2(25)
+)
+ORGANIZATION EXTERNAL (
+    TYPE ORACLE_LOADER
+    DEFAULT DIRECTORY emp_dtails
+    ACCESS PARAMETERS (
+        RECORDS DELIMITED BY NEWLINE
+        FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+        MISSING FIELD VALUES ARE NULL
+        (
+            employee_id, first_name, last_name, email, phone_number,
+            hire_date DATE 'YYYY-MM-DD',
+            job_id, salary, commission_pct, manager_id, department_id,
+            address, city, state, postal_code, country,
+            birth_date DATE 'YYYY-MM-DD',
+            gender, marital_status CHAR(25)
+        )
+    )
+    LOCATION (
+        'employees_details.csv',
+        'employees_details_next.txt'
+    )
+)
+REJECT LIMIT UNLIMITED;
+
+SELECT COUNT(*) FROM employees_ext;
+SELECT * FROM employees_ext WHERE ROWNUM <= 5;
+
+
+select * from employees_ext;
+
+drop table employees_ext
+
+SELECT directory_name, directory_path 
+FROM all_directories 
+WHERE directory_name = 'EMP_DTAILS';
+
+select * from all_directories
+
+drop directory EMP_DETAILSs

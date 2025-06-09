@@ -1,0 +1,23 @@
+select lpad(rpad(first_name,length(first_name)+3,'*'),
+   length(first_name)+6,'*')
+   as lr_pad
+from employees;
+
+create table emp1 (
+    name varchar2(20)
+);
+
+insert into emp1 (name) values ('tamara');
+insert into emp1 (name) values ('arabella');
+insert into emp1 (name) values ('kamala');
+insert into emp1 (name) values ('amaranta');
+insert into emp1 (name) values ('anastasia');
+insert into emp1 (name) values ('amala');
+
+select name,substr(name,
+           instr(name, 'a', 1, 2) + 1,
+           instr(name, 'a', 1, 3) - instr(name, 'a', 1, 2) - 1
+       ) as btw_2nd_3rd
+from emp1;
+
+select INSTR('kamala', 'a', 1, 2) from dual

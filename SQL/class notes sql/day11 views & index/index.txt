@@ -1,0 +1,43 @@
+index- is used to improve the performance of the query
+b-tree/bitmap
+composite
+function based
+unique
+
+select * from user_ind_columns;
+
+oracle keyword --select from syntactic checking
+semantic checking --table column
+
+ ----to reduce cost of the query
+
+index is database object which is used to fetch data very fast from the database
+
+this process automatically improves performance of query
+============================================================================================
+--b-tree index
+
+select first_name,salary from employees
+where first_name='Ellen';
+
+create index ind on employees(first_name asc);
+========================
+--composite index-- index created with multiple column
+
+select first_name,salary from employees
+where first_name='Steven' and last_name='King';
+
+create index idx3 on employees(first_name,last_name)
+======================================================================================
+--function based idex--its create extension of btree index we can do function function inside the index
+select first_name,salary from employees where length(first_name)=4;
+
+create index idx4
+on employees(length(first_name));
+
+
+========================================================================================
+--unique index--its never allow dulpicate
+
+create table t1(a number);
+

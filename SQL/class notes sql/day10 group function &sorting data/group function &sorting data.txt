@@ -1,0 +1,45 @@
+group function
+
+group function operates over number of values with in  column returns a single value
+
+sum()
+max()
+min()
+count()
+avg)()
+
+sum():it gives total from the number data type column
+
+select sum(salary) from employees;
+-------------------------------------------
+max():it will give max among the salary
+select max(salary) from employees;
+--------------------------------------
+min():it will gives min among salary
+select min(salary) from employees;
+-------------------------------------
+count():its gives number of record,it will count only not null values
+select count(salary) from employees;
+------------------------------------------------------
+
+sorting data:
+
+order by
+group by
+
+
+orderby:desc,asc
+select * from employees order by first_name asc; desc;
+
+
+groupby: this clause is used to divide similar data item into set of logical group
+         whatever column is select that should be in groupby
+
+select department_id,sum(salary) from employees group by department_id; 
+
+instead of where clause written having after groupby 
+
+
+select department_id,sum(salary) from employees group by department_id having sum(salary)>5000; 
+
+-----------------------------------------------------------------------

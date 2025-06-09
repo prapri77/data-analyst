@@ -1,0 +1,55 @@
+
+
+select *
+from employees 
+where (department_id, salary) in (
+    select department_id, max(salary)
+    from employees
+    group by department_id
+);
+
+select * from (select e.*,rownum as rn from employees e) where rn<10
+
+
+select * from employees where salary =(select max(salary) from employees)
+
+
+select * from employees where salary = (
+select max(salary)
+from employees
+where salary < (
+    select max(salary) from employees
+)
+);
+
+SELECT *
+FROM (
+    SELECT e.*, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+    FROM employees e
+) 
+WHERE rnk = 3;
+
+SELECT *
+FROM (
+    SELECT e.*, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+    FROM employees e
+)
+WHERE rnk <= 5
+ORDER BY rnk;
+
+
+select first_name, salary as current_salary,
+    (select max(salary) from employees) as max_salary,
+    (select min(salary) from employees) as min_salary
+from employees;
+
+
+SELECT MAX(salary) AS third_highest_salary
+FROM employees
+WHERE salary < (
+    SELECT MAX(salary)
+    FROM employees
+    WHERE salary < (
+        SELECT MAX(salary) FROM employees
+    )
+);

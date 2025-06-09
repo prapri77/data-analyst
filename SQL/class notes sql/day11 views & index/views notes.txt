@@ -1,0 +1,37 @@
+views
+
+views is a virtual  table is a logically represent subset of data from one or more tables
+
+views store only the query
+
+views are not store in the database
+
+types of views
+
+-simple view
+-complex view
+
+simple view
+-----------
+create or replace view v1
+as
+select*from employees;
+
+select * from v1;
+
+advantages
+
+to make complex query look simple to restrict data access
+if a view created on single base table is called view
+
+
+
+--complex view
+
+*a view cannot perform dml operation
+*a view created with multiple base table are called complex view
+
+create or replace view v1
+as
+select e.first_name,e.department_id,d.department_name from employees e,departments d where e.department_id=d.department_id;
+
