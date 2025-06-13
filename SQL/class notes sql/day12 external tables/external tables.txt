@@ -1,0 +1,56 @@
+external tables allow oracle to query data that is stored outside the database in flatfile 
+the oracle_loader driver can be used to access any data stored in any format
+that can be loaded by sql*loader
+
+no dml can be perform on external table
+C:\Users\Saravanan>sqlplus sys as sysdba
+
+SQL*Plus: Release 10.2.0.1.0 - Production on Tue Jan 17 14:32:04 2023
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Enter password:admin
+
+Connected to:
+Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+
+SQL> grant create any directory to hr;
+
+Grant succeeded.
+SQL> grant execute on utl_file to hr;
+
+Grant succeeded.
+
+SQL> grant read,write on directory new to hr;
+
+Grant succeeded.
+--------------------
+32767 number of character we can write in a line
+--------------------------
+create or replace directory new as 'D:\';
+
+
+create directory path as 'D:\'
+
+create table students_ext (
+   student_code varchar2(5),
+   student_name varchar2(50),
+   student_language  varchar2(50)
+)
+organization external (
+ type oracle_loader
+ default directory path
+ access parameters (
+    records delimited by newline
+    fields terminated by ','
+    missing field values are null
+    (
+      student_code char(5),
+      student_name char(50),
+      student_language  char(50)
+)
+)
+location ('students1.txt','students2.txt')
+)
+parallel 5
+reject limit unlimited;

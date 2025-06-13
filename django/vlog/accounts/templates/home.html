@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travelly - Book Your Trip</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #0288d1;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?travel,beach') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: hotpink;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: aqua;
+    }
+
+    .search-box {
+      margin-top: 20px;
+    }
+
+    .search-box input, .search-box button {
+      padding: 10px 15px;
+      border: none;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    .search-box input {
+      width: 60%;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .search-box button {
+      background: #ff5722;
+      color: white;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .search-box button:hover {
+      background: #e64a19;
+    }
+
+    .destinations {
+      padding: 40px;
+      background: yellow;
+    }
+
+    .destinations h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: aqua;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: aqua;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+      color: 'white';
+    }
+
+    .card-content h4 {
+      margin-bottom: 10px;
+      color: #0288d1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0288d1;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .search-box input {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .search-box button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Travelly</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#">Bookings</a>
+      <a href="#">Contact</a>
+      <a href="{% url 'signup' %}">Sign Up</a>
+      <a href="{% url 'login' %}">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Your Adventure Starts Here</h2>
+      <p style="color: aqua;">Find the best deals on flights, hotels, and tours.</p>
+      <div class="search-box">
+        <input type="text" placeholder="Where do you want to go?" />
+        <button>Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations">
+    <h3>Popular Destinations</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?paris" alt="Paris" />
+        <div class="card-content">
+          <h4>Paris, France</h4>
+          <p style="color: white;">Romantic getaways and historic landmarks await you.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?bali" alt="Bali" />
+        <div class="card-content">
+          <h4>Bali, Indonesia</h4>
+          <p style="color: white;">Relax on stunning beaches and explore lush jungles.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?newyork" alt="New York" />
+        <div class="card-content">
+          <h4>New York, USA</h4>
+          <p style="color: white;">Experience the vibrant city life and iconic sites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Travelly. All rights reserved.
+  </footer>
+
+</body>
+</html>

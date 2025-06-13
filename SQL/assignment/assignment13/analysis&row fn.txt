@@ -1,0 +1,36 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select to_char(last_day(TO_DATE('31-JAN-2025', 'DD-MON-YYYY') - 31) + 1, 'day dd-mon-yy') as first_date from dual;
+
+
+SELECT TRUNC(SYSDATE, 'MM') AS first_day_of_month FROM dual;
+
+select last_day('11-jun-25' - 31)+1 from dual
+
+with duplicate as
+(
+select first_name,row_number() over(partition by first_name order by first_name ) as rn from employees 
+)
+select * from duplicate where rn>1; 
+
+
+select department_id,
+case 
+  when department_id = 90 then 'AUDIT'
+  when department_id = 60 then 'HR'
+  else 'others'
+  end as c_w
+from employees;

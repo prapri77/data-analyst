@@ -1,0 +1,137 @@
+single row function
+------------------------------------------------------------------------------------------------
+case manuplation function
+------------------------------
+upper
+lower
+initcap
+
+select first_name,upper(first_name),lower(first_name),initcap(first_name) from employees;
+
+upper=all letter are capital
+lower=all letter are smaller
+initcap=first letter only capital
+---------------------------------------------------------------------------------------------------
+general function
+------------------
+greatest
+
+it gives greatest value in select statement
+select greatest (9,8,10,12) from dual;
+
+least
+it gives least value in select statement
+select least (9,8,10,12) from dual
+-----------------------------------------------------------------------------------------------------
+control statement
+--------------------
+decode
+decode compares the expression to each search value one by one if expression is equal to a search then corresponding
+result is returned by the oracle database
+
+select department_id,decode(department_id,90,'HR',60,'sales','others') from employees
+
+case
+case is not an expression not a statement
+
+select department_id,
+case when department_id=90 then 'HR'  when department_id=60 then 'sales' end from employees;
+
+CONCATENATION:ADDS TWO OR MORE STRING  TOGETHER
+
+SELECT FIRST_NAME||LAST_NAME||' '||SALARY FROM EMPLOYEES
+------------------------------------------------------------------------------------------------------------------
+date function
+---------------
+dd-mon-yy its give computer today date
+
+select sysdate from dual;
+
+month between
+select months_between(sysdate,'21-jan-22') from dual;
+select trunc(months_between(sysdate,'21-jan-22')) from dual;
+select trunc(months_between('21-jan-23','21-jan-22')) from dual;
+
+add date
+select sysdate+10 from dual;
+
+add mon
+select add_months(sysdate,10) from dual;
+
+next day 
+
+select next_day(sysdate,'monday') from dual;
+
+lastday(we can find last date of the month)
+select last_day('2-aug-23') from dual;
+-------------------------------------------------------------------------------------------------------------------
+
+character manuplation function
+------------------------------
+substr(): it gives a part of string
+
+select substr('besant',2,4) from dual;
+select first_name,substr(first_name,1,3) from employees;
+
+instr():it will give position of string or characters
+select instr('besant','a',1,1) from dual;
+
+translate:it will replace character by character
+
+select translate('welcome','em','xy') from dual;
+select translate('welcome','em','x') from dual;
+
+replace: it will take as a complete string
+
+select replace ('welcome','come','sys') from dual;
+
+length: it gives length of string
+
+select length('welcome') from dual;
+
+concat: join 2string value
+select concat ('hello','world') from dual;
+select concat(first_name,last_name) as name from employees
+-------------------------------------------------------------------------------------------------------------------
+
+null function
+--------------
+nvl:if the 1st argument null it give 2nd argument
+
+select nvl(null,3) from dual;
+select nvl(2,3) from dual;
+
+select first_name,nvl(department_id,1000) from employees;
+
+select salary,salary+nvl(COMMISSION_PCT,0) from employees;
+
+nvl2 it accept 3argument if the 1st argument null give 3rd value
+select nvl2(1,2,3) from dual 
+select nvl2(null,2,3) from dualelse its return 1st value
+
+select nullif(3,3) from dual
+select nullif(3,4) from dual
+number function
+----------------
+trunc:round the value will eliminate the decimal point
+
+select trunc(1234.56) from dual;
+select trunc(1234.5678,2) from dual;
+
+round: 
+select round(12345.678) from dual;
+select round(12345.678,2) from dual;
+
+abs:it return absolute value of number
+select abs(-145.35) from dual
+select abs(145.35) from dual
+
+sqrt:it will sqrt of arguments
+
+select sqrt(16) from dual
+=========================
+Conversion Functions
+********************
+
+select to_char(hire_date,'MM/YYYY/DD') from employees
+select to_date('1995-OCT-05','YYYY-MON-DD') from dual;

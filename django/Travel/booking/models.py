@@ -44,7 +44,7 @@ class Train(models.Model):
         return self.name
 
 
-e.
+
 class Flight(models.Model):
     CLASS_TYPE = [
         ("E", "economic"),

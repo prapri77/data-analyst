@@ -1,0 +1,19 @@
+rank()
+dense_rank()
+lead()
+lag()
+
+rank():any duplicate values fount it skips nextvalue
+
+select first_name,salary,rank() over(order by salary desc) from employees;
+--------------------------------------------------------------------------------------
+dense_rank():any duplicate values fount it will not skips nextvalue
+
+select first_name,salary,dense_rank() over(order by salary desc) from employees;
+----------------------------------------------------------------------------------------
+lead(): used to compare values of the current row with previous and nextrow values
+select first_name,lead(first_name,1,'x')over(order by first_name desc) from employees;
+-----------------------------------------------------------------------------------------
+lag(): it will display current values with prior values
+select first_name,lead(first_name,1,'x')over(order by first_name desc) from employees;
+-----------------------------------------------------------------------------------------
