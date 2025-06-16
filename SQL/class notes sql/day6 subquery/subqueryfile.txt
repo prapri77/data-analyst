@@ -1,0 +1,35 @@
+ subquery
+
+
+a query inside a query is called a subquery
+
+nested subquery
+corelated subquery
+inlineview  subquery
+scalar subquery
+
+
+1)inline view
+
+subquery written in the from clause
+
+select * from (select e.*,rownum as rn from employees e) where rownum=1
+
+2)scalar subquery
+subquery written in the select clause
+select 2+ (select 3+4 from dual) from dual;
+select e.first_name,(select max(salary) from employees) from employees e WHERE SALARY=(SELECT MAX(SALARY) FROM EMPLOYEES);
+
+3)corelated subquery
+
+if the inner query depends on outer query is called corelated subquery
+
+SELECT * FROM EMPLOYEES E WHERE E.DEPARTMENT_ID IN (SELECT D.DEPARTMENT_ID FROM DEPARTMENTS D,EMPLOYEES E WHERE E.DEPARTMENT_ID=D.DEPARTMENT_ID)
+
+
+
+4) nested subquery
+
+SELECT * FROM EMPLOYEES WHERE SALARY=(SELECT MAX(SALARY) FROM EMPLOYEES);
+
+
