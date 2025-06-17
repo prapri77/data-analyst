@@ -1,137 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Main Page - Travel Booking</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <title>Welcome to Travelly</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        body {
+            background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    header .user-info {
-      font-size: 14px;
-    }
+        .navbar {
+            background-color: #0288d1;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+        }
 
-    h1 {
-      margin: 0;
-    }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    .main-content {
-      padding: 30px 40px;
-    }
+        .user-info {
+            font-size: 16px;
+        }
 
-    .section {
-      margin-bottom: 40px;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-    .section h2 {
-      margin-top: 0;
-      color: #007bff;
-    }
+        .container h1 {
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
 
-    form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
+        .options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
-    input, select, button {
-      padding: 10px;
-      font-size: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
+        .option-card {
+            background-color: #f1f1f1;
+            width: 250px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
 
-    input:focus, select:focus {
-      border-color: #007bff;
-      outline: none;
-    }
+        .option-card:hover {
+            transform: scale(1.05);
+            background-color: #e0f7fa;
+        }
 
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+        .option-card img {
+            height: 80px;
+            margin-bottom: 15px;
+        }
 
-    button:hover {
-      background-color: #0056b3;
-    }
+        .option-card h3 {
+            margin: 10px 0;
+            color: #007bb5;
+        }
 
-    @media (max-width: 600px) {
-      form {
-        flex-direction: column;
-      }
-    }
-  </style>
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .options {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Welcome, {{ full_name }}</h1>
-  <div class="user-info">
-    Logged in as: {{ email }}
-  </div>
-</header>
+    <div class="navbar">
+        <div class="logo">Travelly</div>
+        <div class="user-info">
+            Welcome, {{ full_name }}<br>
+            Email: {{ email }}
+        </div>
+    </div>
 
-<div class="main-content">
-  <div class="section">
-    <h2>Book a Bus</h2>
-    {% comment %} {% url 'bus_search' %} {% endcomment %}
-    <form method="get" action="#"> 
-      <input type="text" name="from" placeholder="From" required>
-      <input type="text" name="to" placeholder="To" required>
-      <input type="date" name="date" required>
-      <button type="submit">Search Buses</button>
-    </form>
-  </div>
+    <div class="container">
+        <h1>Book Your Journey</h1>
+        <p>Select a mode of transport to continue:</p>
+        <div class="options">
+            <a href="{% url 'vlog:buses' %}" style="text-decoration: none;">
+                <div class="option-card">
+                    <img src="https://img.icons8.com/external-icongeek26-outline-icongeek26/100/000000/external-bus-transportation-icongeek26-outline-icongeek26.png"
+                        alt="Bus">
+                    <h3>Bus Booking</h3>
+                </div>
+            </a>
+            <a href="{% url 'vlog:flight_data_view' %}" style="text-decoration: none;">
+                <div class="option-card">
+                    <img src="https://img.icons8.com/ios/100/000000/airplane-take-off--v1.png" alt="Flight">
+                    <h3>Flight Booking</h3>
+                </div>
+            </a>
+            <a href="{% url 'vlog:trains' %}" style="text-decoration: none;">
+                <div class="option-card">
+                    <img src="https://img.icons8.com/ios/100/000000/train.png" alt="Train">
+                    <h3>Train Booking</h3>
+                </div>
+            </a>
+        </div>
+    </div>
 
-  <div class="section">
-    <h2>Book a Train</h2>
-    {% comment %} {% url 'train_search' %} {% endcomment %}
-    <form method="get" action="#">
-      <input type="text" name="from" placeholder="From" required>
-      <input type="text" name="to" placeholder="To" required>
-      <input type="date" name="date" required>
-      <button type="submit">Search Trains</button>
-    </form>
-  </div>
-
-  <div class="section">
-    <h2>Book a Flight</h2>
-    {% comment %} {% url 'flight_search' %} {% endcomment %}
-    <form method="get" action="#">
-      <input type="text" name="from" placeholder="From" required>
-      <input type="text" name="to" placeholder="To" required>
-      <input type="date" name="date" required>
-      <select name="class">
-        <option value="economy">Economy</option>
-        <option value="business">Business</option>
-        <option value="first">First Class</option>
-      </select>
-      <button type="submit">Search Flights</button>
-    </form>
-  </div>
-</div>
+    <div class="footer">
+        &copy; 2025 Travelly. All rights reserved.
+    </div>
 
 </body>
+
 </html>

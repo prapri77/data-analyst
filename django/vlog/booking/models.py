@@ -17,7 +17,7 @@ class bus(models.Model):
     price = models.FloatField(blank=True,null=True)
 
     def __str__(self):
-        return self.name
+        return self.name if self.name else "Unnamed Object"
     
     class Meta:
         verbose_name = "vlog"

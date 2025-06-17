@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmed</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-message {
+            text-align: center;
+            color: #28a745;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .booking-details {
+            background-color: #e9f7ef;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 6px solid #28a745;
+            margin-top: 20px;
+        }
+
+        .booking-details h3 {
+            margin-top: 0;
+            color: #2d6a4f;
+        }
+
+        .info {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-message">
+            🎉 Booking Confirmed!
+        </div>
+
+        <div class="booking-details">
+            <h3>{{ booking.transport_type }} Booking Details</h3>
+            
+            <div class="info">
+                <span class="label">User:</span> {{ booking.user.username }}
+            </div>
+
+            <div class="info">
+                <span class="label">Transport ID:</span> {{ booking.transport_id }}
+            </div>
+
+            <div class="info">
+                <span class="label">Travel Date:</span> {{ booking.travel_date }}
+            </div>
+
+            <div class="info">
+                <span class="label">Booking Date:</span> {{ booking.booking_date|date:"Y-m-d H:i" }}
+            </div>
+
+            <div class="info">
+                <span class="label">Status:</span> {{ booking.status|capfirst }}
+            </div>
+
+            {% if vehicle %}
+                <div class="info">
+                    <span class="label">Name:</span> {{ vehicle.name }}
+                </div>
+                {% if vehicle.arrival_time %}
+                    <div class="info">
+                        <span class="label">Arrival Time:</span> {{ vehicle.arrival_time }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <a href="{% url 'vlog:booking' %}" class="back-btn">Back to Bookings</a>
+    </div>
+</body>
+</html>

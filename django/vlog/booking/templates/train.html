@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .train-list {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #eef;
+            border-radius: 8px;
+        }
+        .train-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .train-table th, .train-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .train-table th {
+            background: #5c6bc0;
+            color: white;
+        }
+        .select-btn {
+            padding: 6px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .select-btn:hover {
+            background-color: #388E3C;
+        }
+        .form-container {
+            padding: 15px;
+            background: #e0e0e0;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, select, button {
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function selectTrain(trainId) {
+            alert("Selected Train ID: " + trainId);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Train Management System</h2>
+
+        <!-- Train List Section -->
+        <div class="train-list">
+            <h3>Available Trains</h3>
+            <table class="train-table">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Engine No.</th>
+                        <th>Type</th>
+                        <th>Seat Type</th>
+                        <th>Source</th>
+                        <th>Destination</th>
+                        <th>Arrival</th>
+                        <th>Departure</th>
+                        <th>Price</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for train in trains %}
+                    <tr>
+                        <td>{{ train.name }}</td>
+                        <td>{{ train.engine_number }}</td>
+                        <td>{{ train.train_type }}</td>
+                        <td>{{ train.seat_type }}</td>
+                        <td>{{ train.source }}</td>
+                        <td>{{ train.destination }}</td>
+                        <td>{{ train.arrival_time }}</td>
+                        <td>{{ train.departure_time }}</td>
+                        <td>₹{{ train.price }}</td>
+                        <form method="post" action="{% url 'vlog:sel_train' train.id %}">
+                            {% csrf_token %}
+                        <td><button class="select-btn" onclick="selectTrain('{{ train.id }}')">Select</button></td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-container">
+            <h3>Add a Train</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add Train</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -73,7 +73,7 @@ class TrainAdmin(admin.ModelAdmin):
 #user defined ui for flights we do admin panel configurations
 
 class FlightAdmin(admin.ModelAdmin):
-    change_list_template = "flights.html"
+    change_list_template = "flights_data.html"
 
     def get_urls(self):
         urls = super().get_urls()
@@ -89,4 +89,5 @@ class FlightAdmin(admin.ModelAdmin):
 admin.site.register(bus, busAdmin)
 admin.site.register(Train, TrainAdmin)
 admin.site.register(Flight)  # , FlightAdmin)
+admin.site.register(Booking)
 

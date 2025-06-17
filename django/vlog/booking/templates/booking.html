@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Booking</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 30px 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .alert {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .booking-entry {
+            background: #f1f3f5;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-left: 6px solid #007bff;
+            border-radius: 6px;
+        }
+
+        .booking-entry h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .booking-entry .info {
+            font-size: 15px;
+            margin: 4px 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Your Travel</h2>
+        <p>Data: {{ data }}</p>
+        {% for message in messages %}
+            <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-error{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="form-section">
+             {% if data %}
+              <form method="post" action="{% url 'vlog:book_html' data %}">
+             {% else %}
+               <form method="post" action="#">
+             {% endif %}
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.transport_type.label_tag }}
+                    {{ form.transport_type }}
+                </div>
+                <div class="form-group">
+                    {{ form.transport_id.label_tag }}
+                    {{ form.transport_id }}
+                </div>
+                <div class="form-group">
+                    {{ form.travel_date.label_tag }}
+                    {{ form.travel_date }}
+                </div>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+
+        <div class="bookings-section">
+            <div class="section-title">Your Bookings</div>
+            {% if existing_bookings %}
+                {% for booking in existing_bookings %}
+                    <div class="booking-entry">
+                        <h4>{{ booking.transport_type }} - ID: {{ booking.transport_id }}</h4>
+                        <div class="info"><strong>Status:</strong> {{ booking.status }}</div>
+                        <div class="info"><strong>Travel Date:</strong> {{ booking.travel_date }}</div>
+                        <div class="info"><strong>Booking Date:</strong> {{ booking.booking_date|date:"Y-m-d H:i" }}</div>
+
+                        {% if booking.transport_type == "Bus" %}
+                            
+                            <div class="info"><strong>Name:</strong> {{ bus.name }}</div>
+                            <div class="info"><strong>Bus Number:</strong> {{ bus.bus_number }}</div>
+                            <div class="info"><strong>Arrival:</strong> {{ bus.arrival_time }}</div>
+                         
+                        {% elif booking.transport_type == "Train" %}
+                           
+                            <div class="info"><strong>Name:</strong> {{ train.name }}</div>
+                            <div class="info"><strong>Engine Number:</strong> {{ train.engine_number }}</div>
+                            <div class="info"><strong>Arrival:</strong> {{ train.arrival_time }}</div>
+                           
+                        {% elif booking.transport_type == "Flight" %}
+                          
+                            <div class="info"><strong>Name:</strong> {{ flight.name }}</div>
+                            <div class="info"><strong>Flight Number:</strong> {{ flight.flight_number }}</div>
+                            <div class="info"><strong>Arrival:</strong> {{ flight.arrival_time }}</div>
+                           
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No bookings found.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
