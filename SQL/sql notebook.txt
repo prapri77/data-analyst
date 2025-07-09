@@ -3,6 +3,8 @@ https://www.python.org/downloads/
 mkdir sql_notebook
 cd sql_notebook
 
+cd python_notebook
+
 python -m venv env
 
 env\Scripts\activate
