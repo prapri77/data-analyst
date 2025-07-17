@@ -1,0 +1,74 @@
+try:
+    # Code that might raise an error
+    numerator = int(input("Enter a numerator: "))
+    denominator = int(input("Enter a denominator: "))
+    result = numerator / denominator
+    print(f"The result is: {result}")
+except ValueError:#6/r string so value error
+    print("Invalid input: Please enter integers only.")
+except ZeroDivisionError:#5/0
+    print("Error: Cannot divide by zero.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+else:#it print only try is success
+    print("Calculation successful!")
+finally:#it print any ways 
+    print("Execution of the try-except block is complete.")
+
+import requests
+try:
+    i = requests.get("https://dummyjson.com/products/1") #api like
+    print("reading content:",i.text)
+    print("statuscode:",i.status_code)
+except Exception as e: #we get clarity regarding error thru this 
+    print(f"occured error:{e}")
+
+try:
+    order_confirmed = input("Is your food order confirmed? (yes/no): ").strip().lower()
+    if order_confirmed != "yes":
+        raise Exception("Food order not confirmed. Please confirm your order.") #this is our own raised exception for no order
+    # Food menu as key-value pairs
+    food_menu = {
+        "pizza": 8.99,
+        "burger": 5.49,
+        "pasta": 7.99,
+        "salad": 4.99
+    }
+    print("Food order has been confirmed!")
+    print("Menu:")
+    for item, price in food_menu.items():
+        print(f"{item.title()}: ${price}")
+except Exception as e:
+    print(f"Order Error: {e}")#it will raise here for e variable
+
+
+#using class we handling exception
+class ValueTooSmallError(Exception):
+    # pass
+    def __init__(self):
+        self.message = "The value is too small!"
+
+class ValueTooBigError(Exception):
+    # pass
+    def __init__(self):
+        self.message = "The value is too big!"
+
+
+number_to_guess = 10
+
+try:
+    user_guess = int(input("Guess the number: "))
+    if user_guess < number_to_guess:
+        raise ValueTooSmallError#("The value is too small!")
+    elif user_guess > number_to_guess:
+        raise ValueTooBigError#("The value is too big!")
+    else:
+        print("Congratulations! You guessed the right number.")
+except ValueTooSmallError as e:
+    # print(e)
+    print(e.message)
+except ValueTooBigError as e:
+    # print(e)
+    print(e.message)
+except ValueError:
+    print("Invalid input: Please enter an integer.")
