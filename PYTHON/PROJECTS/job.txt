@@ -1,0 +1,1 @@
+We are looking for a Python Developer with strong experience in Django, REST APIs, and cloud platforms like AWS. Knowledge of Git, SQL, and good communication skills is essential.
