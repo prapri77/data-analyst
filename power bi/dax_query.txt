@@ -1,0 +1,43 @@
+1.which team as the highest possibility of winning
+
+if [team1]=[winner] then [team1] else [team2]
+
+= if [Teams] = [Winner] then 1 else 0
+
+2.what is the possibility that toss winning team as win the matches
+
+toss_wins_counts = if(matches[toss_winner]=matches[winner],1,0)
+
+possibility = SUM(matches[toss_wins_counts]) = 325
+possibility = SUM(matches[toss_wins_counts])/total matches
+
+3.how many team bat first and won the match 
+
+bat_first:
+= if [toss_decision] = "bat" 
+    then [toss_winner] 
+    else if [toss_winner] = [team1] then [team2] else [team1]
+
+
+winner column:
+Winner =
+if 
+    matches[result] = "no result" then
+    "No Winner" else
+    matches[winner]
+
+
+
+bat_first_win = 
+IF (
+    matches[winner] = "No Winner",
+    BLANK(),
+    IF ( matches[bat_first] = matches[winner], 1, 0 )
+)
+
+
+bat_f_won_count = SUM(matches[bat_first_win])
+
+4.how many team bowling first won the match
+
+bowl_first_won_count = COUNTROWS(FILTER(matches,matches[bat_first_win]=0 && NOT ISBLANK(matches[bat_first_win])))
