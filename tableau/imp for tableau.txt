@@ -1,0 +1,43 @@
+Guys so take the below qustns as project ..  with the same sample super store data analyse the below. Those who are willing to get evaluated for the project result you can
+
+
+1. Which mode of shipment has more profit
+
+2. Which mode of shipment is quick.
+
+3. Who were our top 10 customers
+
+4. Which are our top 10 products which has highest sales
+
+5. May the cities from where we get orders from
+
+6. How many number of unique customers do we have?
+
+7. Hw quick in days the product is delivered as soon as it is ordered
+
+
+8. For each segment Which product is ordered most
+
+9. Which customers has many orders placed
+
+10. What is the count of orders in every region
+
+
+Pls add below part to your resume 
+
+
+Summary
+Experienced Tableau Developer with 5+ years of experience providing data-driven solutions to improve business performance. Proficient in data mining, data analysis, data visualization and reporting.
+Work Experience
+Tableau Developer, Tableau Software
+March 2023 • Present
+* Developed Tableau dashboards and visualizations to track sales and customer metrics for a large retail organization.
+* Implemented Tableau Server to enable sharing of dashboards, reports and visualizations for a corporate environment.
+* Worked with stakeholders to design and develop Tableau dashboards to meet their business needs.
+Tableau Developer, Tableau Software
+May 2021 - February 2023
+* Developed automated processes and scripts to clean and prepare data for Tableau visualizations.
+* Enhanced existing Tableau dashboards to further improve user experience.
+* Performed data analysis, data mining, and data modeling using tableau
+
+https://help.tableau.com/current/pro/desktop/en-us/maps_mapsources_wms.htm

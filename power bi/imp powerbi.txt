@@ -1,0 +1,133 @@
+https://drive.google.com/drive/folders/1chwdSTUpkOlI-QblRynwXbpAxvY0ojbc?usp=sharing
+
+https://drive.google.com/drive/folders/1o8lRfIoZVNeY5_fLA7yFqD8ddP7pUToU?usp=sharing
+
+
++ What is Power BI?
++ What are the main components of Power BI?
++ What is the difference between Power BI Desktop and Power BI Service?
++ What data sources can Power BI connect to?
++ What are DAX functions in Power BI?
++ What is the difference between a measure and a calculated column?
++ What is the use of Power Query Editor?
++ What are relationships in Power BI?
++ What is a star schema and how is it used in Power BI?
++ What’s the difference between slicers and filters?
++ What is the difference between direct query and import mode?
++ What is row-level security (RLS)?
++ How do you optimize Power BI performance?
++ What is a Power BI Gateway and when is it needed?
++ What is the use of bookmarks in Power BI?
++ How do you compare two tables with no relationship in Power BI?
++ Explain a challenging Power BI project you handled.
++ How do you schedule a data refresh in Power BI?
++ What are custom visuals in Power BI?
++ How do you publish and share a Power BI report?
+
+About Yourself
+Tell me about yourself.
+
+What are your strengths?
+
+What are your weaknesses?
+
+How would your friends describe you?
+
+What motivates you?
+
+What demotivates you?
+
+What are you passionate about?
+
+How do you handle stress or pressure?
+
+What’s something you're proud of?
+
+What’s a personal accomplishment you're still striving for?
+
+Work Style & Behavior
+How do you prioritize your work?
+
+Are you more comfortable working alone or in a team?
+
+How do you handle criticism?
+
+Describe your ideal work environment.
+
+How do you deal with failure?
+
+How do you stay organized?
+
+How do you handle conflicts at work?
+
+Give an example of a time you went above and beyond.
+
+How do you stay motivated during repetitive tasks?
+
+How do you respond to change?
+
+Values & Goals
+
+What does success mean to you?
+
+Where do you see yourself in 5 years?
+
+What are your short-term goals?
+
+What are your long-term goals?
+
+What do you value most in a workplace?
+
+What are you looking for in a manager or leader?
+
+What kind of work culture brings out your best?
+
+Do you prefer stability or constant learning and change?
+
+What drives your career decisions?
+
+How do you define personal growth?
+
+Problem-Solving & Decision-Making
+Describe a tough decision you had to make recently.
+
+Have you ever had to learn something completely new quickly? How did you do it?
+
+Tell me about a mistake you made and what you learned from it.
+
+How do you approach solving a problem you've never encountered before?
+
+Can you give an example of creative thinking in a tough situation?
+
+Team & Communication
+Describe a time you had a conflict with a team member.
+
+How do you ensure good communication in a team?
+
+How do you handle working with someone you don’t get along with?
+
+What role do you usually take in a group?
+
+Describe a time you helped a teammate improve.
+
+Adaptability & Learning
+How do you approach learning new skills?
+
+What’s the most important thing you've learned in the past year?
+
+Are you open to relocation or travel for work?
+
+Have you ever had to adjust to a major change at work?
+
+Tell me about a time you had to step outside of your comfort zone.
+
+Company Fit & Motivation
+Why do you want to work here?
+
+What do you know about our company?
+
+What makes you a good fit for this role?
+
+What are your salary expectations?
+
+Do you have any questions for us?
